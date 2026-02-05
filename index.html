@@ -1,1 +1,769 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moriahnet & Vialux Internet - Provedor de Internet e Soluções em TI</title>
+    <meta name="description" content="Provedor de internet, serviços de comunicação multimídia, instalação e manutenção de redes em Sales Oliveira e região. Conectamos você ao mundo digital.">
+    <meta name="keywords" content="provedor de internet, Sales Oliveira, instalação de internet, manutenção de redes, comunicação multimídia, serviços de TI">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a5fb4;
+            --primary-dark: #0d4a9c;
+            --secondary: #26a269;
+            --dark: #333333;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+        
+        .logo-text span {
+            font-size: 0.9rem;
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        /* Sections */
+        section {
+            padding: 70px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* About */
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        /* Contact */
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        
+        .contact-info {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-item i {
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid var(--light-gray);
+            border-radius: 5px;
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--light-gray);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-column a:hover {
+            color: var(--white);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: var(--light-gray);
+        }
+        
+        /* Privacy Policy */
+        .privacy-policy {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+        
+        .privacy-policy h3 {
+            margin: 25px 0 15px;
+            color: var(--primary);
+        }
+        
+        .privacy-policy h3:first-child {
+            margin-top: 0;
+        }
+        
+        .privacy-policy p {
+            margin-bottom: 15px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content, .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow);
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .privacy-policy {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-satellite-dish"></i>
+                <div class="logo-text">
+                    <h1>Moriahnet & Vialux Internet</h1>
+                    <span>Conectando Sales Oliveira ao mundo digital</span>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul id="mainMenu">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#about">Quem Somos</a></li>
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                    <li><a href="#privacy">Política de Privacidade</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Internet de Alta Velocidade e Soluções em TI</h2>
+            <p>Oferecemos serviços de comunicação multimídia, instalação e manutenção de redes para residências e empresas em Sales Oliveira e região.</p>
+            <a href="#contact" class="btn">Solicitar Orçamento</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Quem Somos</h2>
+                <p>Conheça a Moriahnet & Vialux Internet, sua provedora de serviços de comunicação e internet na região de Sales Oliveira</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Nossa História</h3>
+                    <p>A Moriahnet & Vialux Internet LTDA foi fundada em 11 de maio de 2022 com o objetivo de levar conectividade de qualidade e soluções em tecnologia para a região de Sales Oliveira e cidades vizinhas.</p>
+                    <p>Somos uma empresa sólida, registrada com CNPJ 46.345.869/0001-79, enquadrada no regime Simples Nacional, com capital social de R$ 50.000,00, comprometida com o desenvolvimento tecnológico da nossa região.</p>
+                    <p>Nossa sede está localizada na Avenida Dom Pedro II, 347, no centro de Sales Oliveira, onde contamos com uma equipe especializada pronta para atender às necessidades dos nossos clientes.</p>
+                    <p>Atuamos principalmente como provedor de serviços de comunicação multimídia, mas também oferecemos uma ampla gama de serviços complementares para atender todas as necessidades digitais dos nossos clientes.</p>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Equipe de tecnologia trabalhando">
+                </div>
+            </div>
+            
+            <div class="privacy-policy" style="margin-top: 40px;">
+                <h3>Informações de Registro da Empresa</h3>
+                <p><strong>Razão Social:</strong> Moriahnet & Vialux Internet LTDA</p>
+                <p><strong>CNPJ:</strong> 46.345.869/0001-79</p>
+                <p><strong>Inscrição Estadual SP:</strong> 597.025.197.117</p>
+                <p><strong>Data da Abertura:</strong> 11/05/2022</p>
+                <p><strong>Porte:</strong> Micro Empresa</p>
+                <p><strong>Natureza Jurídica:</strong> Sociedade Empresária Limitada</p>
+                <p><strong>Regime Tributário:</strong> Simples Nacional (Optante desde 11/05/2022)</p>
+                <p><strong>Capital Social:</strong> R$ 50.000,00</p>
+                <p><strong>Situação Cadastral:</strong> Ativa (desde 11/05/2022)</p>
+                
+                <h3>Quadro de Sócios e Administradores</h3>
+                <p>• Andre Luis Fernandes Coelho - Sócio-Administrador</p>
+                <p>• Barbara Fernanda da Silva - Sócio-Administrador</p>
+                <p>• Douglas Augusto Franco Melon - Sócio-Administrador</p>
+                <p>• Joao Rafael da Silva - Sócio-Administrador</p>
+                
+                <h3>Endereço Completo</h3>
+                <p><strong>Logradouro:</strong> Avenida Dom Pedro II, 347</p>
+                <p><strong>Bairro:</strong> Centro</p>
+                <p><strong>Cidade:</strong> Sales Oliveira - SP</p>
+                <p><strong>CEP:</strong> 14660-000</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" style="background-color: var(--light-gray);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Serviços</h2>
+                <p>Oferecemos uma ampla gama de serviços em tecnologia e comunicação para atender residências e empresas</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>Provedor de Internet</h3>
+                    <p>Serviços de comunicação multimídia e acesso às redes de comunicações com alta velocidade e estabilidade.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Instalação e Manutenção de Redes</h3>
+                    <p>Projeto, instalação e manutenção de redes cabeadas e wireless para empresas e residências.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Manutenção de Equipamentos</h3>
+                    <p>Reparação e manutenção de computadores, equipamentos de comunicação e periféricos.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Venda de Equipamentos</h3>
+                    <p>Comércio de equipamentos de informática, telefonia, comunicação e componentes eletrônicos.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Treinamentos</h3>
+                    <p>Treinamento em informática, desenvolvimento profissional e gerencial para empresas e indivíduos.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3>Salas de Internet</h3>
+                    <p>Espaços com computadores conectados para acesso à internet e realização de tarefas digitais.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <h3>Atividades Registradas (CNAEs)</h3>
+                <p><strong>Principal:</strong> 61.10-8-03 - Serviços de comunicação multimídia - SCM</p>
+                <p><strong>Secundárias:</strong> Provedor de acesso, treinamentos, manutenção, comércio de equipamentos e muito mais.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Entre em Contato</h2>
+                <p>Tem alguma dúvida ou precisa de um orçamento? Entre em contato conosco!</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Informações de Contato</h3>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Endereço</h4>
+                            <p>Avenida Dom Pedro II, 347 - Centro<br>São Paulo - Sales Oliveira<br>CEP: 14660-000</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>(16) 3442-XXXX</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>E-mail</h4>
+                            <p>financeiro@moriahnet.net.br</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horário de Atendimento</h4>
+                            <p>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Seu nome" required>
+                        <input type="email" placeholder="Seu e-mail" required>
+                        <input type="tel" placeholder="Seu telefone">
+                        <select style="width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid var(--light-gray); border-radius: 5px;">
+                            <option value="">Selecione o serviço de interesse</option>
+                            <option value="internet">Internet Residencial/Comercial</option>
+                            <option value="instalacao">Instalação de Redes</option>
+                            <option value="manutencao">Manutenção de Equipamentos</option>
+                            <option value="equipamentos">Compra de Equipamentos</option>
+                            <option value="treinamento">Treinamentos</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                        <textarea placeholder="Sua mensagem" required></textarea>
+                        <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Policy -->
+    <section id="privacy" style="background-color: var(--light-gray);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Política de Privacidade</h2>
+                <p>Conheça como protegemos e utilizamos os dados dos nossos clientes</p>
+            </div>
+            
+            <div class="privacy-policy">
+                <h3>1. Coleta de Dados</h3>
+                <p>A Moriahnet & Vialux Internet LTDA coleta dados pessoais fornecidos voluntariamente pelos clientes através de formulários de contato, contratos de serviço e outras interações com nossa empresa.</p>
+                
+                <h3>2. Uso das Informações</h3>
+                <p>Utilizamos os dados coletados para: fornecer os serviços contratados, processar pagamentos, enviar comunicações sobre serviços, melhorar nossa oferta de produtos e cumprir obrigações legais.</p>
+                
+                <h3>3. Proteção de Dados</h3>
+                <p>Implementamos medidas de segurança técnicas e administrativas para proteger os dados pessoais contra acesso não autorizado, alteração, divulgação ou destruição.</p>
+                
+                <h3>4. Compartilhamento de Dados</h3>
+                <p>Não comercializamos dados pessoais. Podemos compartilhar informações com autoridades governamentais quando exigido por lei ou para parceiros técnicos necessários à prestação dos serviços contratados.</p>
+                
+                <h3>5. Direitos do Titular</h3>
+                <p>Os clientes têm direito a acessar, corrigir, excluir ou limitar o uso de seus dados pessoais. Para exercer esses direitos, entre em contato através dos canais disponibilizados.</p>
+                
+                <h3>6. Cookies e Tecnologias Similares</h3>
+                <p>Nosso site pode utilizar cookies para melhorar a experiência do usuário, analisar tráfego e personalizar conteúdo. O uso do site implica consentimento com o uso de cookies conforme descrito.</p>
+                
+                <h3>7. Alterações na Política</h3>
+                <p>Esta política pode ser atualizada periodicamente. A versão mais recente estará sempre disponível em nosso site.</p>
+                
+                <h3>8. Contato para Dúvidas</h3>
+                <p>Para questões sobre privacidade e proteção de dados, entre em contato conosco através dos telefones ou e-mail disponibilizados nesta página.</p>
+                
+                <p><strong>Última atualização:</strong> Março de 2024</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Moriahnet & Vialux</h3>
+                    <p>Sua provedora de internet e soluções em TI em Sales Oliveira e região. Conectamos você ao mundo digital com qualidade e confiança.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#about">Quem Somos</a></li>
+                        <li><a href="#services">Serviços</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                        <li><a href="#privacy">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Serviços</h3>
+                    <ul>
+                        <li><a href="#services">Provedor de Internet</a></li>
+                        <li><a href="#services">Instalação de Redes</a></li>
+                        <li><a href="#services">Manutenção de Equipamentos</a></li>
+                        <li><a href="#services">Venda de Equipamentos</a></li>
+                        <li><a href="#services">Treinamentos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Av. Dom Pedro II, 347</li>
+                        <li><i class="fas fa-phone"></i> (16) 3442-XXXX</li>
+                        <li><i class="fas fa-envelope"></i> financeiro@moriahnet.net.br</li>
+                        <li><i class="fas fa-city"></i> Sales Oliveira - SP</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Moriahnet & Vialux Internet LTDA - CNPJ: 46.345.869/0001-79 - Todos os direitos reservados.</p>
+                <p>Site desenvolvido para campanhas Google Ads</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mainMenu').classList.toggle('active');
+            this.innerHTML = document.getElementById('mainMenu').classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    document.getElementById('mainMenu').classList.remove('active');
+                    document.getElementById('mobileMenuBtn').innerHTML = '<i class="fas fa-bars"></i>';
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real implementation, you would send the form data to a server
+            // For this example, we'll just show an alert
+            alert('Obrigado pelo seu contato! Em breve nossa equipe entrará em contato com você.');
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Add active class to current section in navigation
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
